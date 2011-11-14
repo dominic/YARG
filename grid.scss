@@ -1,0 +1,42 @@
+/* Configuration */
+$container_width: 960;
+$gutter_width: 40;
+$column_count: 12;
+$ie_selector: 'html.ie &';
+
+/* Calculations */
+$gutter: ($gutter_width / $container_width) * 100%;
+$column: ($container_width - $column_count * $gutter_width) / $column_count;
+
+/* Full-width, centered containers */
+@mixin container {
+  @include clearfix;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Returns percent-based column styles mased on the number of $cols specified */
+@mixin column($cols: $column_count) {
+  float: left;
+  width: ($cols * $column + ($cols - 1) * $gutter_width) / $container_width * 100%;
+  @include gutter;
+
+  #{$ie_selector} {
+    overflow-x: hidden;
+  }
+}
+
+/* Include standard gutters on non-column elements */
+@mixin gutter {
+  margin: 0 $gutter/2;
+}
+
+/* Prepend $cols columns of margin */
+@mixin prepend($cols) {
+  margin-left: ($cols * $column + ($cols + 0.5) * $gutter_width) / $container_width * 100%;
+}
+
+/* Append $cols columns of margin */
+@mixin append($cols) {
+  margin-right: ($cols * $column + ($cols + 0.5) * $gutter_width) / $container_width * 100%;
+}

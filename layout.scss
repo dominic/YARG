@@ -1,0 +1,27 @@
+/**********************************************/
+
+@import "grid";
+
+/* Uncomment any of these lines to customize
+   the calculations used for your flexible grid. */
+
+//$container_width: 960;
+//$gutter_width: 40;
+//$column_count: 12;
+//$ie_selector: 'html.ie &';
+
+/**********************************************/
+
+/* Base styles go here */
+
+@media only screen and (min-width: 480px) {
+  /* Small screen styles go here */
+}
+
+@media only screen and (min-width: 768px) {
+  /* Medium screen styles (iPads) go here */
+}
+
+@media only screen and (min-width: 960px) {
+  /* Large screen styles (desktops)  go here */
+}
